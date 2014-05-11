@@ -1,0 +1,863 @@
+Library {
+  Name			  "nid_lib"
+  Version		  7.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "Shift_JIS"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Thu Jun 02 10:11:37 2011"
+  Creator		  "tchikama"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "tchikama"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Nov 30 09:50:36 2012"
+  RTWModifiedTimeStamp	  276169665
+  ModelVersionFormat	  "1.%<AutoIncrement:376>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "GenerateSLWebview"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		21
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 400, 210, 1280, 840 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "MS UI Gothic"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "MS UI Gothic"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "MS UI Gothic"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+  }
+  System {
+    Name		    "nid_lib"
+    Location		    [125, 130, 685, 877]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "14"
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID Depth"
+      SID		      "1"
+      Ports		      [1, 2]
+      Position		      [215, 295, 345, 375]
+      InitFcn		      "checkDeviceBlock(bdroot, 'NID Depth')"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "2,0,-1,0,0,0,0,0,depthOutput,0,viewer,0,0,conv_XYZ_RW,0,0,0,0,0,0,0,0,0"
+      EnableBusSupport	      off
+      MaskType		      "NID Depth"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_depth.html', '-helpbrowser')"
+      MaskPromptString	      "Output|Real world coordinates (Default: Projective)|Image output"
+      MaskStyleString	      "popup(Depth|XYZ|X/Y/Z),checkbox,checkbox"
+      MaskVariables	      "depthOutput=@1;conv_XYZ_RW=@2;viewer=@3;"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "if strcmp(get_param(gcb, 'depthOutput'), 'Depth')\n    set_param(gcb, 'MaskEnableString"
+      "', 'on,off,on')\nelse\n    set_param(gcb, 'MaskEnableString', 'on,on,on')\nend\n||"
+      MaskEnableString	      "on,off,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect')\n\nport_label('input', 1, 'SYNC');\nif depthOutput == 1\n    port_label('outpu"
+      "t', 1, 'Depth');\n    if viewer == 1\n        port_label('output', 2, 'Image');\n    end\nelseif depthOutput == "
+      "2\n    port_label('output', 1, 'XYZ');\n    if viewer == 1\n        port_label('output', 2, 'Image');\n    end\n"
+      "elseif depthOutput == 3\n    port_label('output', 1, 'X');\n    port_label('output', 2, 'Y');\n    port_label('o"
+      "utput', 3, 'Z');\n    if viewer == 1\n        port_label('output', 4, 'Image');\n    end\nend"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Depth|off|on"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID IMAQ"
+      SID		      "8"
+      Ports		      [0, 1]
+      Position		      [215, 85, 345, 165]
+      LibraryVersion	      "1.120"
+      InitFcn		      "checkIMAQBlock(bdroot, gcb)"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "1,res_fps,imaq_sample_time,imaq_depth,imaq_motion,imaq_image,imaq_skeleton,imaq_ir,0,0,0,view_"
+      "point,mirror_image,0,needPsiPose,angle,near_mode,angle_read,0,seated_mode,angle_input,skeleton_smooth,infer_skel"
+      "eton"
+      EnableBusSupport	      off
+      MaskType		      "NID IMAQ"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_imaq.html', '-helpbrowser')"
+      MaskPromptString	      "IMAQ for Depth|IMAQ for Motion|IMAQ for Image|Adjust view point to Image|IMAQ for Skelet"
+      "on|IMAQ for IR|Mirror image|Sample time|Resolution|Need PSI pose for calibration of Skeleton tracking|Set sensor"
+      " angle by Input|Sensor angle|Read sensor angle|Near mode|Seated mode|Skeleton smoothing parameters|Infer skeleto"
+      "n joints position"
+      MaskStyleString	      "checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,edit,popup(QVGA (320x240):"
+      " 60 FPS|VGA (640x480): 30 FPS),checkbox,checkbox,edit,checkbox,checkbox,checkbox,edit,checkbox"
+      MaskVariables	      "imaq_depth=@1;imaq_motion=@2;imaq_image=@3;view_point=@4;imaq_skeleton=@5;imaq_ir=@6;mirror"
+      "_image=@7;imaq_sample_time=@8;res_fps=@9;needPsiPose=@10;angle_input=@11;angle=@12;angle_read=@13;near_mode=@14;"
+      "seated_mode=@15;skeleton_smooth=@16;infer_skeleton=@17;"
+      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|||||||if strcmp(get_param(gcb, 'res_fps'), 'QVGA (320x240): 60 FPS') \n    if str2num("
+      "get_param(gcb, 'imaq_sample_time')) < 1.0/60.0\n        error ('Sample time should be greater than or equal to 1"
+      "/60 for QVGA: 60 FPS.');\n    end\nelseif strcmp(get_param(gcb, 'res_fps'), 'VGA (640x480): 30 FPS')\n    if str"
+      "2num(get_param(gcb, 'imaq_sample_time')) < 1.0/30.0\n        error ('Sample time should be greater than or equal"
+      " to 1/30 for VGA: 30 FPS.');\n    end\nend|if strcmp(get_param(gcb, 'res_fps'), 'QVGA (320x240): 60 FPS') \n    "
+      "if str2num(get_param(gcb, 'imaq_sample_time')) < 1.0/60.0\n        error ('Sample time should be greater than or"
+      " equal to 1/60 for QVGA: 60 FPS.');\n    end\nelseif strcmp(get_param(gcb, 'res_fps'), 'VGA (640x480): 30 FPS')\n"
+      "    if str2num(get_param(gcb, 'imaq_sample_time')) < 1.0/30.0\n        error ('Sample time should be greater tha"
+      "n or equal to 1/30 for VGA: 30 FPS.');\n    end\nend||if strcmp(get_param(gcb, 'angle_input'), 'on')\n    % Disa"
+      "ble \"Sensor angle\" when \"Set sensor angle by Input\" was on\n    set_param(gcb, 'MaskEnableString', 'off,off,"
+      "off,on,off,off,on,on,on,on,on,off,on,on,on,on,on'); \nelse\n    set_param(gcb, 'MaskEnableString', 'off,off,off,"
+      "on,off,off,on,on,on,on,on,on,on,on,on,on,on'); \nend|if str2num(get_param(gcb, 'angle')) > 27 \n        error ('"
+      "Kinect Sensor angle has to be within -27 to 27 [deg].');\nelseif  str2num(get_param(gcb, 'angle')) < -27\n      "
+      "  error ('Kinect Sensor angle has to be within -27 to 27 [deg].');\nend\n||||if length(str2num(get_param(gcb, 's"
+      "keleton_smooth'))) ~= 5\n    error('Size of Skeleton smoothing parameter has to be 5.');\nend\n|"
+      MaskEnableString	      "off,off,off,on,off,off,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "off,off,off,on,off,off,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect')\n\nport_label('output', 1, 'SYNC');\n\nif angle_read == 1\n    port_label('out"
+      "put', 2, 'Angle');\nend\n\nif angle_input == 1\n    port_label('input', 1, 'Angle');\nend\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "on|on|on|on|on|off|off|1/30|VGA (640x480): 30 FPS|off|off|0|off|off|off|[0.5 0.5 0.5 0.05"
+      " 0.04]|on"
+      MaskTabNameString	      "Main,Main,Main,Main,Main,Main,Main,Main,OpenNI,OpenNI,Kinect SDK,Kinect SDK,Kinect SDK,"
+      "Kinect SDK,Kinect SDK,Kinect SDK,Kinect SDK"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID IR"
+      SID		      "11"
+      Ports		      [1, 2]
+      Position		      [215, 610, 345, 690]
+      LibraryVersion	      "1.237"
+      InitFcn		      "checkDeviceBlock(bdroot, 'NID IR')"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "6,0,-1,0,0,0,0,0,0,0,viewer,0,0,0,0,0,0,0,0,0,0,0,0"
+      EnableBusSupport	      off
+      MaskType		      "NID IR"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_ir.html', '-helpbrowser')"
+      MaskPromptString	      "Image output"
+      MaskStyleString	      "checkbox"
+      MaskVariables	      "viewer=@1;"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect')\n\nport_label('input', 1, 'SYNC');\nport_label('output', 1, 'IR');\nif viewer "
+      "== 1\n    port_label('output', 2, 'Image');\nend\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "on"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID Image"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [215, 190, 345, 270]
+      LibraryVersion	      "1.116"
+      InitFcn		      "checkDeviceBlock(bdroot, 'NID Image')"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "4,0,-1,0,0,0,0,0,0,imageOutput,0,0,0,0,0,0,0,0,0,0,0,0,0"
+      EnableBusSupport	      off
+      MaskType		      "NID Image"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_image.html', '-helpbrowser')"
+      MaskPromptString	      "Output"
+      MaskStyleString	      "popup(RGB|R/G/B)"
+      MaskVariables	      "imageOutput=@1;"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect');\n\nport_label('input', 1, 'SYNC');\nif imageOutput == 1\n    port_label('outp"
+      "ut', 1, 'RGB');\nelseif imageOutput == 2\n    port_label('output', 1, 'R');\n    port_label('output', 2, 'G');\n"
+      "    port_label('output', 3, 'B');\nend"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "RGB"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID Motion"
+      SID		      "6"
+      Ports		      [1, 2]
+      Position		      [215, 400, 345, 480]
+      LibraryVersion	      "1.76"
+      InitFcn		      "checkDeviceBlock(bdroot, 'NID Motion')"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "3,0,-1,0,0,0,0,0,0,0,viewer,0,0,0,0,0,0,0,0,0,0,0,0"
+      EnableBusSupport	      off
+      MaskType		      "NID Motion"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_motion.html', '-helpbrowser')"
+      MaskPromptString	      "Image output"
+      MaskStyleString	      "checkbox"
+      MaskVariables	      "viewer=@1;"
+      MaskTunableValueString  "off"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect')\n\nport_label('input', 1, 'SYNC');\nport_label('output', 1, 'Motion');\nif vie"
+      "wer == 1\n    port_label('output', 2, 'Image');\nend\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "on"
+    }
+    Block {
+      BlockType		      "S-Function"
+      Name		      "NID Skeleton"
+      SID		      "10"
+      Ports		      [1, 3]
+      Position		      [215, 505, 345, 585]
+      LibraryVersion	      "1.202"
+      InitFcn		      "checkDeviceBlock(bdroot, 'NID Skeleton')"
+      FontName		      "Arial"
+      FunctionName	      "sfun_nid"
+      Parameters	      "5,0,-1,0,0,0,0,0,0,0,viewer,0,0,conv_XYZ_RW,0,0,0,0,num_of_skeleton_tracking,0,0,0,0"
+      EnableBusSupport	      off
+      MaskType		      "NID Skeleton"
+      MaskDescription	      " "
+      MaskHelp		      "web('slnid_skeleton.html', '-helpbrowser')"
+      MaskPromptString	      "Max number of Skeleton Tracking|Real world coordinates (Default: Projective)|Image output"
+      MaskStyleString	      "popup(1|2),checkbox,checkbox"
+      MaskVariables	      "num_of_skeleton_tracking=@1;conv_XYZ_RW=@2;viewer=@3;"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp('Kinect')\n\nport_label('input', 1, 'SYNC');\n\nport_label('output', 1, 'Tracking');\nif"
+      " num_of_skeleton_tracking == 1\n  port_label('output', 2, 'Skeleton');\n  if viewer == 1\n    port_label('output"
+      "', 3, 'Image');\n  end\nelse\n  port_label('output', 2, 'Skeleton1');\n  port_label('output', 3, 'Skeleton2');\n"
+      "  if viewer == 1\n    port_label('output', 4, 'Image');\n  end\nend\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|off|on"
+    }
+    Annotation {
+      Name		      "Simulink Support for Kinect "
+      Position		      [278, 37]
+      DropShadow	      on
+      FontName		      "Arial"
+      FontSize		      20
+    }
+    Annotation {
+      Name		      "Copyright 2011 - 2012 The MathWorks, Inc."
+      Position		      [280, 735]
+      FontName		      "Arial"
+    }
+  }
+}

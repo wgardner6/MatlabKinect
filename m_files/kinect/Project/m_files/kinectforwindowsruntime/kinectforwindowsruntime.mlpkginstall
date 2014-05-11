@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file should be opened using MATLAB (http://www.mathworks.com).
+To open it with a specific instance of MATLAB, 
+ a) Open MATLAB,
+ b) Browse to this file using the Current Folder Browser, and
+ c) Double-click on this file
+
+Copyright 2013 The MathWorks, Inc.
+-->
+<MWSignpost>
+
+  <PackageInfo version="1.0">
+    <SignpostData>
+       <Repository>MathWorks</Repository>
+       <Name>Kinect for Windows Runtime</Name>
+       <BaseProduct>Image Acquisition Toolbox</BaseProduct>
+       <FullName>Image Acquisition Toolbox Support Package for Kinect For Windows Runtime</FullName>
+    </SignpostData>
+    <Signature>F80ABBA2A71AE9E51153C3700487EDFE</Signature>
+  </PackageInfo>
+
+</MWSignpost>

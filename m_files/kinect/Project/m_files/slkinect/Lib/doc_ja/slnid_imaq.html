@@ -1,0 +1,133 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>NID IMAQ</title><meta name="generator" content="MATLAB 7.11.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-11-30"><meta name="DC.source" content="slnid_imaq.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>NID IMAQ</h1><!--introduction--><p>Kinect&#12487;&#12496;&#12452;&#12473;&#12363;&#12425;&#21508;&#31278;&#12398;&#12487;&#12540;&#12479;&#12434;&#21462;&#24471;&#12375;&#12414;&#12377;&#12290;Simulink Support for Kinect&#12398;&#21508;&#12502;&#12525;&#12483;&#12463;&#12434;&#20351;&#29992;&#12377;&#12427;&#26178;&#12399;&#12289;&#22266;&#23450;&#12473;&#12486;&#12483;&#12503;&#12391;&#12471;&#12511;&#12517;&#12524;&#12540;&#12471;&#12519;&#12531;&#12434;&#12362;&#12371;&#12394;&#12358;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">&#20837;&#21147;&#20449;&#21495;</a></li><li><a href="#2">&#20986;&#21147;&#20449;&#21495;</a></li><li><a href="#3">&#12502;&#12525;&#12483;&#12463;&#12497;&#12521;&#12513;&#12540;&#12479;</a></li><li><a href="#4">NID IMAQ&#12502;&#12525;&#12483;&#12463;&#12392;&#20182;&#12398;NID&#12502;&#12525;&#12483;&#12463;&#12398;&#25509;&#32154;&#26041;&#27861;</a></li></ul></div><h2>&#20837;&#21147;&#20449;&#21495;<a name="1"></a></h2><div><ul><li>Angle (int32): Kinect&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;[deg]&#20837;&#21147;&#12509;&#12540;&#12488;&#12290;&#12371;&#12398;&#20837;&#21147;&#12509;&#12540;&#12488;&#12399;&#12289; Kinect SDK::Set sensor angle by Input&#12364;&#36984;&#25246;&#12373;&#12428;&#12383;&#26178;&#12395;&#26377;&#21177;&#12392;&#12394;&#12426;&#12414;&#12377;&#12290; -27&#65374;27[deg]&#12398;&#31684;&#22258;&#12364;&#26377;&#21177;&#20837;&#21147;&#20516;&#12391;&#12354;&#12426;&#12289;&#12381;&#12428;&#20197;&#22806;&#12398;&#20516;&#12364;&#20837;&#21147;&#12373;&#12428;&#12383;&#22580;&#21512;&#12399;&#12289;&#26368;&#24460;&#12398;&#35373;&#23450;&#35282;&#24230;&#12434;&#20445;&#25345;&#12375;&#12414;&#12377;&#12290;</li></ul></div><h2>&#20986;&#21147;&#20449;&#21495;<a name="2"></a></h2><div><ul><li>SYNC (uint32): NID Depth/Motion/Image/Skeleton/IR&#12502;&#12525;&#12483;&#12463;&#12392;&#12398;&#21516;&#26399;&#29992;&#26178;&#38291;&#20449;&#21495;&#20986;&#21147; [msec]&#12290; SYNC&#20986;&#21147;&#20449;&#21495;&#12399;&#30452;&#25509;&#12289;NID Depth/Motion/Image/Skeleton/IR&#12502;&#12525;&#12483;&#12463;&#12398;SYNC&#20837;&#21147;&#12509;&#12540;&#12488;&#12408;&#12289;&#25509;&#32154;&#12377;&#12427;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Angle (int32): Kinect&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;[deg]. &#21462;&#24471;&#12373;&#12428;&#12383;&#12475;&#12531;&#12469;&#12540;&#35282;&#24230;&#12399;-64&#65374;64[deg]&#12398;&#31684;&#22258;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290; &#12371;&#12398;&#20986;&#21147;&#20449;&#21495;&#12399;&#12289;Kinect for Windows SDK&#12434;&#20351;&#29992;&#12375;&#12289;&#12363;&#12388;&#12289;Kinect SDK::Read sensor angle&#12481;&#12455;&#12483;&#12463;&#12508;&#12483;&#12463;&#12473;&#12434;ON&#12395;&#12375;&#12383;&#22580;&#21512;&#12398;&#12415;&#26377;&#21177;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;</li></ul></div><h2>&#12502;&#12525;&#12483;&#12463;&#12497;&#12521;&#12513;&#12540;&#12479;<a name="3"></a></h2><div><ul><li>Adjust view point to Image: NID Depth/Motion/Skeleton&#12502;&#12525;&#12483;&#12463;&#29992;&#21462;&#24471;&#12487;&#12540;&#12479;&#12398;&#12499;&#12517;&#12540;&#12509;&#12452;&#12531;&#12488;&#12434;NID Image&#12502;&#12525;&#12483;&#12463;&#29992;&#21462;&#24471;&#12487;&#12540;&#12479; &#12398;&#12499;&#12517;&#12540;&#12509;&#12452;&#12531;&#12488;&#12395;&#21512;&#12431;&#12379;&#12427;&#12290;NID Image&#12502;&#12525;&#12483;&#12463;&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;&#22580;&#21512;&#12398;&#12415;&#12289;&#12371;&#12398;&#35373;&#23450;&#12399;&#26377;&#21177;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Mirror image: &#37857;&#20687;&#12452;&#12513;&#12540;&#12472;&#12487;&#12540;&#12479;&#12434;&#21462;&#24471;&#12377;&#12427;&#12290;&#12371;&#12398;&#35373;&#23450;&#12399;&#20840;&#12390;&#12398;&#12487;&#12496;&#12452;&#12473;&#12487;&#12540;&#12479;&#12395;&#21453;&#26144;&#12373;&#12428;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Sample time: &#12469;&#12531;&#12503;&#12523;&#26178;&#38291;&#12399;&#19978;&#35352;&#12398;Reslution and FPS&#12497;&#12521;&#12513;&#12540;&#12479;&#12391;&#35373;&#23450;&#12373;&#12428;&#12383;&#12289;1/FPS[sec] &#20197;&#19978;&#12395;&#35373;&#23450;&#12377;&#12427;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290; NID IMAQ&#12502;&#12525;&#12483;&#12463;&#20869;&#37096;&#12391;&#12399;&#12289;NID&#12487;&#12496;&#12452;&#12473;&#12363;&#12425;&#12398;&#23433;&#23450;&#12375;&#12383;&#12487;&#12540;&#12479;&#21462;&#24471;&#12434;&#23455;&#29694;&#12377;&#12427;&#12383;&#12417;&#12395;&#12289;&#21069;&#22238;&#12398;&#12487;&#12540;&#12479;&#21462;&#24471;&#26178;&#12363;&#12425;&#12289;&#35373;&#23450;&#12373;&#12428;&#12383;&#12469;&#12531;&#12503;&#12523;&#26178;&#38291;&#12364;&#36942;&#12366;&#12427;&#12414;&#12391;&#24453;&#27231;&#12375;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>OpenNI::Resolution: OpenNI&#21521;&#12369;NID&#12398;&#35299;&#20687;&#24230;(Resolution)&#12392;&#26356;&#26032;&#12524;&#12540;&#12488;(FPS: Frame Per Second)&#12398;&#35373;&#23450;&#12290;</li></ul></div><div><ul><li>OpenNI::Need PSI pose for calibration of Skeleton tracking: &#39592;&#26684;&#12488;&#12521;&#12483;&#12461;&#12531;&#12464;&#29992;&#12461;&#12515;&#12522;&#12502;&#12524;&#12540;&#12471;&#12519;&#12531;&#26178;&#12395;&#12289;&#23554;&#29992;&#12509;&#12540;&#12474;(PSI)&#12434;&#24517;&#35201;&#12392;&#12377;&#12427;&#12363;&#12289;&#23554;&#29992;&#12509;&#12540;&#12474;&#28961;&#12375;&#12391;&#33258;&#21205;&#35469;&#35672;&#12373;&#12379;&#12427;&#12363;&#12434;&#36984;&#25246;&#12391;&#12365;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Set sensor angle by Input: Kinect&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;&#12434;&#12502;&#12525;&#12483;&#12463;&#20837;&#21147;&#12509;&#12540;&#12488;&#12363;&#12425;&#35373;&#23450;&#12377;&#12427;&#12290;Kinect&#12495;&#12540;&#12489;&#12454;&#12455;&#12450;&#12398;&#20181;&#27096;&#12395;&#12424;&#12426;&#12289;&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;&#12398;&#22793;&#26356;&#38971;&#24230;&#12399;&#12289;&#20869;&#37096;&#30340;&#12395;1&#31186;&#12395;&#19968;&#22238;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Sensor angle:  Kinect&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;[deg]&#12290;Sensor angle&#12497;&#12521;&#12513;&#12540;&#12479;&#20516;&#12399;&#12289;-27&#65374;27 [deg]&#12398;&#31684;&#22258;&#12395;&#35373;&#23450;&#12377;&#12427;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Read sensor angle: Kinect&#12475;&#12531;&#12469;&#12540;&#32118;&#23550;&#35282;&#24230;[deg]&#12434;Simulink&#19978;&#12391;&#21462;&#24471;&#12377;&#12427;&#12383;&#12417;&#12398;&#35373;&#23450;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Near mode: Kinect Near Mode&#12398;&#35373;&#23450;&#12497;&#12521;&#12513;&#12540;&#12479;&#12290;Near mode&#12391;&#12399;&#12289;&#12475;&#12531;&#12469;&#21069;&#26041;&#12398;&#32004;40[cm]&#12414;&#12391;&#12398;3D&#28145;&#24230;&#12434;&#28204;&#23450;&#12377;&#12427;&#12371;&#12392;&#12364;&#21487;&#33021;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Seated mode: Kinect Seated Mode&#12398;&#35373;&#23450;&#12497;&#12521;&#12513;&#12540;&#12479;&#12290;Seated mode&#12391;&#12399;&#12289;&#19978;&#21322;&#36523;&#12398;&#12415;&#12364;&#39592;&#26684;&#12488;&#12521;&#12483;&#12461;&#12531;&#12464;&#12398;&#23550;&#35937;&#12392;&#12394;&#12426;&#12414;&#12377;&#12290;</li></ul></div><div><ul><li>Kinect SDK::Skeleton smoothing parameters: Smoothing / Correction / Prediction / Jitter Radius / Max Deviation Radius&#12392;&#12356;&#12358;5&#12388;&#12398;&#12497;&#12521;&#12513;&#12540;&#12479;&#20516;&#12434;&#35373;&#23450;&#12377;&#12427;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290; &#12487;&#12501;&#12457;&#12523;&#12488;&#20516;&#12399;[0.5 0.5 0.5 0.05 0.04]&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;(&#21508;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#35500;&#26126;&#12399;Kinect SDK C++ API Reference&#12363;&#12425;&#12398;&#24341;&#29992;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;)</li></ul></div><p>- Smoothing: Smoothing parameter in the range [0.0, 1.0] inclusive. A higher value corresponds to more smoothing. Passing 0 causes the raw data to be returned. As the smoothing value is increased responsiveness to the raw data decreases; therefore, increased smoothing leads to increased latency.</p><p>- Correction: Correction parameter in the range [0.0, 1.0] inclusive. A higher value corrects toward the raw data more quickly, a lower value corrects more slowly and appears smoother.</p><p>- Prediction: The number of frames to predict into the future, which must be greater than or equal to zero. Values greater than 0.5 will likely lead to overshoot when the data changes quickly; dampen the overshoot effect by using a smaller value of Max Deviation Radius.</p><p>- Jitter Radius: The jitter-reduction radius, in meters. Any jitter beyond this radius is clamped to the radius.</p><p>- The maximum radius (in meters) that filtered positions can deviate from raw data. Filtered values that would exceed this radius from the raw data are clamped at this distance, in the direction of the filtered value.</p><div><ul><li>Kinect SDK::Infer skeleton joints position: &#39592;&#26684;&#12488;&#12521;&#12483;&#12461;&#12531;&#12464;&#12364;&#35576;&#26465;&#20214;&#12395;&#12424;&#12426;&#12289;&#19978;&#25163;&#12367;&#34892;&#12360;&#12394;&#12363;&#12387;&#12383;&#22580;&#21512;&#12289;&#36942;&#21435;&#12398;&#12487;&#12540;&#12479;&#12363;&#12425;&#25512;&#23450;&#12377;&#12427;&#12363;(&#65309;ON) &#12289;&#21542;&#12363;(=OFF)&#12434;&#35373;&#23450;&#12391;&#12365;&#12414;&#12377;&#12290;</li></ul></div><h2>NID IMAQ&#12502;&#12525;&#12483;&#12463;&#12392;&#20182;&#12398;NID&#12502;&#12525;&#12483;&#12463;&#12398;&#25509;&#32154;&#26041;&#27861;<a name="4"></a></h2><p><img vspace="5" hspace="5" src="NID_SYNC.png" alt=""> </p><p class="footer">Copyright 2011-2012 The MathWorks, Inc.<br>
+      Published with MATLAB&reg; 7.11.1<br></p></div><!--
+##### SOURCE BEGIN #####
+%% NID IMAQ
+%
+% Kinectデバイスから各種のデータを取得します。Simulink Support for Kinectの各ブロックを使用する時は、固定ステップでシミュレーションをおこなう必要があります。
+%
+% Copyright 2011-2012 The MathWorks, Inc.
+
+%% 入力信号
+%
+% * Angle (int32): Kinectセンサー絶対角度[deg]入力ポート。この入力ポートは、 Kinect SDK::Set sensor angle by Inputが選択された時に有効となります。
+% -27～27[deg]の範囲が有効入力値であり、それ以外の値が入力された場合は、最後の設定角度を保持します。
+
+%% 出力信号
+%
+% * SYNC (uint32): NID Depth/Motion/Image/Skeleton/IRブロックとの同期用時間信号出力 [msec]。
+% SYNC出力信号は直接、NID Depth/Motion/Image/Skeleton/IRブロックのSYNC入力ポートへ、接続する必要があります。
+%
+% * Angle (int32): Kinectセンサー絶対角度[deg]. 取得されたセンサー角度は-64～64[deg]の範囲になります。
+% この出力信号は、Kinect for Windows SDKを使用し、かつ、Kinect SDK::Read sensor angleチェックボックスをONにした場合のみ有効になります。
+
+%% ブロックパラメータ
+%
+% * Adjust view point to Image: NID Depth/Motion/Skeletonブロック用取得データのビューポイントをNID Imageブロック用取得データ
+% のビューポイントに合わせる。NID Imageブロックを使用している場合のみ、この設定は有効になります。
+%
+% * Mirror image: 鏡像イメージデータを取得する。この設定は全てのデバイスデータに反映されます。 
+%
+% * Sample time: サンプル時間は上記のReslution and FPSパラメータで設定された、1/FPS[sec] 以上に設定する必要があります。
+% NID IMAQブロック内部では、NIDデバイスからの安定したデータ取得を実現するために、前回のデータ取得時から、設定されたサンプル時間が過ぎるまで待機します。
+%
+% * OpenNI::Resolution: OpenNI向けNIDの解像度(Resolution)と更新レート(FPS: Frame Per Second)の設定。
+%
+% * OpenNI::Need PSI pose for calibration of Skeleton tracking: 骨格トラッキング用キャリブレーション時に、専用ポーズ(PSI)を必要とするか、専用ポーズ無しで自動認識させるかを選択できます。
+%
+% * Kinect SDK::Set sensor angle by Input: Kinectセンサー絶対角度をブロック入力ポートから設定する。Kinectハードウェアの仕様により、センサー絶対角度の変更頻度は、内部的に1秒に一回になります。
+%
+% * Kinect SDK::Sensor angle:  Kinectセンサー絶対角度[deg]。Sensor angleパラメータ値は、-27～27 [deg]の範囲に設定する必要があります。
+%
+% * Kinect SDK::Read sensor angle: Kinectセンサー絶対角度[deg]をSimulink上で取得するための設定。
+%
+% * Kinect SDK::Near mode: Kinect Near Modeの設定パラメータ。Near modeでは、センサ前方の約40[cm]までの3D深度を測定することが可能になります。
+%
+% * Kinect SDK::Seated mode: Kinect Seated Modeの設定パラメータ。Seated modeでは、上半身のみが骨格トラッキングの対象となります。
+%
+% * Kinect SDK::Skeleton smoothing parameters: Smoothing / Correction / Prediction / Jitter Radius / Max Deviation Radiusという5つのパラメータ値を設定することができます。
+% デフォルト値は[0.5 0.5 0.5 0.05 0.04]になります。(各パラメータの説明はKinect SDK C++ API Referenceからの引用になります。)
+%
+% - Smoothing: Smoothing parameter in the range [0.0, 1.0] inclusive. A higher value corresponds to more smoothing. Passing 0 causes the raw data to be returned. 
+% As the smoothing value is increased responsiveness to the raw data decreases; therefore, increased smoothing leads to increased latency.
+%
+% - Correction: Correction parameter in the range [0.0, 1.0] inclusive. A higher value corrects toward the raw data more quickly, a lower value corrects more slowly and appears smoother.
+%
+% - Prediction: The number of frames to predict into the future, which must be greater than or equal to zero. Values greater than 0.5 will likely lead to overshoot when the data changes quickly; 
+% dampen the overshoot effect by using a smaller value of Max Deviation Radius.
+%
+% - Jitter Radius: The jitter-reduction radius, in meters. Any jitter beyond this radius is clamped to the radius.
+%
+% - The maximum radius (in meters) that filtered positions can deviate from raw data. Filtered values that would exceed this radius from the raw data are clamped at this distance, in the direction of the filtered value.
+%
+% * Kinect SDK::Infer skeleton joints position: 骨格トラッキングが諸条件により、上手く行えなかった場合、過去のデータから推定するか(＝ON) 、否か(=OFF)を設定できます。
+
+%% NID IMAQブロックと他のNIDブロックの接続方法
+%
+% <<NID_SYNC.png>>
+
+##### SOURCE END #####
+--></body></html>

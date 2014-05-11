@@ -1,0 +1,135 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>NID IMAQ</title><meta name="generator" content="MATLAB 7.11.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-11-30"><meta name="DC.source" content="slnid_imaq.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>NID IMAQ</h1><!--introduction--><p>Acquire all data from Kinect Device. Simulink Support for Kinect blocks need to be simulated with fixed step.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Input Signal</a></li><li><a href="#2">Output Signal</a></li><li><a href="#3">Block Parameters</a></li><li><a href="#4">How to connect NID IMAQ and other NID blocks.</a></li></ul></div><h2>Input Signal<a name="1"></a></h2><div><ul><li>Angle (int32): The elevation angle relative to gravity, in degrees. This input is available only when Kinect SDK::Set sensor angle by Input was checked. The value between -27 to 27 [deg] is reflected to the sensor, otherwise, the sensor angle remains same.</li></ul></div><h2>Output Signal<a name="2"></a></h2><div><ul><li>SYNC (uint32): Data acquision time in msec to synchronize with Depth/Motion/Image/Skeleton/IR blocks. The SYNC output signal has to directly feed into Depth/Motion/Image/Skeleton/IR blocks.</li></ul></div><div><ul><li>Angle (int32): The elevation angle relative to gravity, in degrees. Angle value range is -64 to 64 [deg]. Angle output signal is available when Kinect SDK::Read sensor angle parameter was checked.</li></ul></div><h2>Block Parameters<a name="3"></a></h2><div><ul><li>Adjust view point to Image: Adjust view point of Depth/Motion/Skeleton/IR data to the view point of Image data. If Image block is not used in the model, this parameter does not affect.</li></ul></div><div><ul><li>Mirror image: Generate mirrored image data. It affects all device data.</li></ul></div><div><ul><li>Sample time: Sample time has to be greater than or equal to 1/FPS [sec] according to the Resolution and FPS parameter. NID IMAQ block has internal wait until the specified period (= Sample time) is elapsed from the last data acquision.</li></ul></div><div><ul><li>OpenNI::Resolution: Resolution and FPS (Frame Per Second) configurations for OpenNI.</li></ul></div><div><ul><li>OpenNI::Need PSI pose for calibration of Skeleton tracking: Choose to have PSI pose or pose less for skeleton tracking calibration.</li></ul></div><p>Note that the pose less calibration requires versions of OpenNI and PrimeSense NITE which support the pose less calibration.</p><div><ul><li>Kinect SDK::Set sensor angle by Input: Set sensor elevation angle relative to gravity in degrees by input. If valid value is within -27 to 27 [deg]. Note that internal sensor angle sampling rate during simulation is restricted 1 second due to Kinect hardware specification. If specified value exceeded the above range, the last specified sensor angle is kept.</li></ul></div><div><ul><li>Kinect SDK::Sensor angle: The elevation angle relative to gravity, in degrees. Sensor angle value has to be within -27 to 27 [deg].</li></ul></div><div><ul><li>Kinect SDK::Read sensor angle: Configuration to read Kinect elevation angle.</li></ul></div><div><ul><li>Kinect SDK::Near mode: The Kinect Near Mode configuration which enables the depth camera to see objects as close as 40 centimeters in front of the sensor.</li></ul></div><div><ul><li>Kinect SDK::Seated mode: The Kinect Seated Mode configuration which enables the Skeleton Tracking to track only upper body.</li></ul></div><div><ul><li>Kinect SDK::Skeleton smoothing parameters: There are five parameters (Smoothing / Correction / Prediction / Jitter Radius / Max Deviation Radius). Default parameter values are [0.5 0.5 0.5 0.05 0.04].</li></ul></div><p>- Smoothing: Smoothing parameter in the range [0.0, 1.0] inclusive. A higher value corresponds to more smoothing. Passing 0 causes the raw data to be returned. As the smoothing value is increased responsiveness to the raw data decreases; therefore, increased smoothing leads to increased latency.</p><p>- Correction: Correction parameter in the range [0.0, 1.0] inclusive. A higher value corrects toward the raw data more quickly, a lower value corrects more slowly and appears smoother.</p><p>- Prediction: The number of frames to predict into the future, which must be greater than or equal to zero. Values greater than 0.5 will likely lead to overshoot when the data changes quickly; dampen the overshoot effect by using a smaller value of Max Deviation Radius.</p><p>- Jitter Radius: The jitter-reduction radius, in meters. Any jitter beyond this radius is clamped to the radius.</p><p>- The maximum radius (in meters) that filtered positions can deviate from raw data. Filtered values that would exceed this radius from the raw data are clamped at this distance, in the direction of the filtered value.</p><div><ul><li>Kinect SDK::Infer skeleton joints position: If The skeleton joint positions could not be tracked, the positions are inferred from previous frame data.</li></ul></div><h2>How to connect NID IMAQ and other NID blocks.<a name="4"></a></h2><p><img vspace="5" hspace="5" src="NID_SYNC.png" alt=""> </p><p class="footer">Copyright 2011-2012 The MathWorks, Inc.<br>
+      Published with MATLAB&reg; 7.11.1<br></p></div><!--
+##### SOURCE BEGIN #####
+%% NID IMAQ
+%
+% Acquire all data from Kinect Device. Simulink Support for Kinect blocks need to be simulated with fixed step.
+%
+% Copyright 2011-2012 The MathWorks, Inc.
+
+%% Input Signal
+%
+% * Angle (int32): The elevation angle relative to gravity, in degrees.
+% This input is available only when Kinect SDK::Set sensor angle by Input was checked. The value between -27 to 27 [deg] is reflected to the sensor, otherwise, the sensor angle remains same.
+
+%% Output Signal
+%
+% * SYNC (uint32): Data acquision time in msec to synchronize with Depth/Motion/Image/Skeleton/IR blocks.
+% The SYNC output signal has to directly feed into Depth/Motion/Image/Skeleton/IR blocks.
+%
+% * Angle (int32): The elevation angle relative to gravity, in degrees. Angle value range is -64 to 64 [deg]. 
+% Angle output signal is available when Kinect SDK::Read sensor angle parameter was checked.
+
+%% Block Parameters
+%
+% * Adjust view point to Image: Adjust view point of Depth/Motion/Skeleton/IR data to the view point of Image data.
+% If Image block is not used in the model, this parameter does not affect.
+%
+% * Mirror image: Generate mirrored image data. It affects all device data.
+%
+% * Sample time: Sample time has to be greater than or equal to 1/FPS [sec] according to the Resolution and FPS parameter. 
+% NID IMAQ block has internal wait until the specified period (= Sample time) is elapsed from the last data acquision.
+%
+% * OpenNI::Resolution: Resolution and FPS (Frame Per Second) configurations for OpenNI.
+%
+% * OpenNI::Need PSI pose for calibration of Skeleton tracking: Choose to have PSI pose or pose less for skeleton tracking calibration.
+%
+% Note that the pose less calibration requires versions of OpenNI and PrimeSense NITE which support the pose less calibration. 
+%
+% * Kinect SDK::Set sensor angle by Input: Set sensor elevation angle relative to gravity in degrees by input. If valid value is within -27 to 27 [deg]. 
+% Note that internal sensor angle sampling rate during simulation is restricted 1 second due to Kinect hardware specification. If specified value exceeded the above range, the last specified sensor angle is kept.   
+% 
+% * Kinect SDK::Sensor angle: The elevation angle relative to gravity, in degrees. Sensor angle value has to be within -27 to 27 [deg].
+%
+% * Kinect SDK::Read sensor angle: Configuration to read Kinect elevation angle.
+%
+% * Kinect SDK::Near mode: The Kinect Near Mode configuration which enables the depth camera to see objects as close as 40 centimeters in front of the sensor. 
+%
+% * Kinect SDK::Seated mode: The Kinect Seated Mode configuration which enables the Skeleton Tracking to track only upper body. 
+%
+% * Kinect SDK::Skeleton smoothing parameters: There are five parameters (Smoothing / Correction / Prediction / Jitter Radius / Max Deviation Radius). Default parameter values are [0.5 0.5 0.5 0.05 0.04].
+%
+% - Smoothing: Smoothing parameter in the range [0.0, 1.0] inclusive. A higher value corresponds to more smoothing. Passing 0 causes the raw data to be returned. 
+% As the smoothing value is increased responsiveness to the raw data decreases; therefore, increased smoothing leads to increased latency.
+%
+% - Correction: Correction parameter in the range [0.0, 1.0] inclusive. A higher value corrects toward the raw data more quickly, a lower value corrects more slowly and appears smoother.
+%
+% - Prediction: The number of frames to predict into the future, which must be greater than or equal to zero. Values greater than 0.5 will likely lead to overshoot when the data changes quickly; 
+% dampen the overshoot effect by using a smaller value of Max Deviation Radius.
+%
+% - Jitter Radius: The jitter-reduction radius, in meters. Any jitter beyond this radius is clamped to the radius.
+%
+% - The maximum radius (in meters) that filtered positions can deviate from raw data. Filtered values that would exceed this radius from the raw data are clamped at this distance, in the direction of the filtered value.
+%
+% * Kinect SDK::Infer skeleton joints position: If The skeleton joint positions could not be tracked, the positions are inferred from previous frame data.
+
+%% How to connect NID IMAQ and other NID blocks.
+%
+% <<NID_SYNC.png>>
+
+##### SOURCE END #####
+--></body></html>

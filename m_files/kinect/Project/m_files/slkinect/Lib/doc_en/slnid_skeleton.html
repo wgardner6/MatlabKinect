@@ -1,0 +1,146 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>NID Skeleton</title><meta name="generator" content="MATLAB 7.11.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-11-30"><meta name="DC.source" content="slnid_skeleton.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>NID Skeleton</h1><!--introduction--><p>Return skeleton joints data from Kinect device.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Input Signal</a></li><li><a href="#2">Output Signals</a></li><li><a href="#3">Block Parameters</a></li><li><a href="#4">Calibration for Skeleton tracking (for only OpenNI)</a></li></ul></div><h2>Input Signal<a name="1"></a></h2><div><ul><li>SYNC (uint32): IMAQ synchronization time in msec.</li></ul></div><h2>Output Signals<a name="2"></a></h2><div><ul><li>Tracking (int32): Number of people in skeleton tracking.</li></ul></div><div><ul><li>Skeleton (double): XYZ coordinates of skeleton joints. Either Real world or Projective coordinate can be configured.</li></ul></div><p>[OpenNI]</p><p>Total 15 skeleton joints are tracked. If a XYZ joint data is [0 0 0], it means that the joint position could not be recognized. Index number of skeleton joints data represents Head = 1, Neck = 2, Torso = 3, Left shoulder = 4, Left elbow = 5, Left hand = 6, Right shoulder = 7, Right elbow = 8, Right hand= 9, Left hip = 10, Left knee = 11, Left foot = 12, Right hip = 13, Right knee = 14, Right foot = 15. Left and Right are mirrored (it's not tracking user's point of view, but viewpoint from NID).</p><p><img vspace="5" hspace="5" src="SkeletonJoints.jpg" alt=""> </p><p>[Kinect SDK for Windows]</p><p>Total 20 skeleton joints are tracked. If a XYZ joint data is [0 0 0], it means that the joint position could not be recognized. Index number of skeleton joints data represents Hip center = 1, Spine = 2, Shoulder center = 3, Head = 4, Shoulder left = 5, Elbow left = 6, Wrist left = 7, Hand left = 8, Shoulder right = 9, Elbow right = 10, Wrist right = 11, Hand right = 12, Hip left = 13, Knee left = 14, Ankle left = 15, Foot left = 16, Hip right = 17, Knee right = 18, Ankle right = 19, Foot right = 20.</p><p><img vspace="5" hspace="5" src="SkeletonJoint_KinectSDK.png" alt=""> </p><div><ul><li>Image (uint8): RGB24 image of skeleton.</li></ul></div><h2>Block Parameters<a name="3"></a></h2><div><ul><li>Max number of Skeleton Tracking: Maximum number of people in skeleton tracking. If 2 is configured, addtional Skeleton output will be added.</li></ul></div><div><ul><li>Real world coordinates (Default: Projective): Choose Real world (X, Y, Z in meter) or Projective (X, Y in pixel and Z in meter) coordinates for skeleton joints.</li></ul></div><p>Projective coodinates:</p><p><img vspace="5" hspace="5" src="ProjectiveXYZ.png" alt=""> </p><p>Real world coodinates:</p><p><img vspace="5" hspace="5" src="RealWorldXYZ.png" alt=""> </p><div><ul><li>Image output: Return RGB24 image of skeleton.</li></ul></div><h2>Calibration for Skeleton tracking (for only OpenNI)<a name="4"></a></h2><p>Note that calibration for skeleton tracking is required for only Need PSI pose for calibration of Skeleton tracking in IMAQ block is checked or pose less calibration unsupported OpenNI was used.</p><p>The skeleton tracking calibration requires the following steps:</p><div><ul><li>Start simulation.</li></ul></div><div><ul><li>If a person moved in front of the device, person shape should be appeared in the display.</li></ul></div><div><ul><li>The person needs to take a calibration pose called &#8220;PSI&#8221; to start calibration.</li></ul></div><p><img vspace="5" hspace="5" src="PsiPose.jpg" alt=""> </p><div><ul><li>Once the calibration pose is recognized, the color of the motion detected shape should be turned to white and keep the calibration pose until skeleton tracking begins.</li></ul></div><div><ul><li>While skeleton tracking is performed, small crosses '+' are drawn at the skeleton joints position on the motion detected shape in the display of Image output.</li></ul></div><p class="footer">Copyright 2011-2012 The MathWorks, Inc.<br>
+      Published with MATLAB&reg; 7.11.1<br></p></div><!--
+##### SOURCE BEGIN #####
+%% NID Skeleton
+%
+% Return skeleton joints data from Kinect device.
+%
+% Copyright 2011-2012 The MathWorks, Inc.
+
+%% Input Signal
+%
+% * SYNC (uint32): IMAQ synchronization time in msec.
+
+%% Output Signals
+%
+% * Tracking (int32): Number of people in skeleton tracking.
+%
+% * Skeleton (double): XYZ coordinates of skeleton joints.
+% Either Real world or Projective coordinate can be configured.
+%
+% [OpenNI]
+%
+% Total 15 skeleton joints are tracked. If a XYZ joint data is [0 0 0], it means that the joint position could not be recognized.
+% Index number of skeleton joints data represents
+% Head = 1, Neck = 2, Torso = 3, Left shoulder = 4, Left elbow = 5,
+% Left hand = 6, Right shoulder = 7, Right elbow = 8, Right hand= 9,
+% Left hip = 10, Left knee = 11, Left foot = 12, Right hip = 13, Right knee = 14, Right foot = 15.
+% Left and Right are mirrored (it's not tracking user's point of view, but viewpoint from NID).
+%
+% <<SkeletonJoints.jpg>>
+%
+% [Kinect SDK for Windows]
+%
+% Total 20 skeleton joints are tracked. If a XYZ joint data is [0 0 0], it means that the joint position could not be recognized.
+% Index number of skeleton joints data represents
+% Hip center = 1, Spine = 2, Shoulder center = 3, Head = 4, Shoulder left = 5,
+% Elbow left = 6, Wrist left = 7, Hand left = 8, Shoulder right = 9, Elbow right = 10,
+% Wrist right = 11, Hand right = 12, Hip left = 13, Knee left = 14, Ankle left = 15,
+% Foot left = 16, Hip right = 17, Knee right = 18, Ankle right = 19, Foot right = 20.
+%
+% <<SkeletonJoint_KinectSDK.png>>
+%
+%
+% * Image (uint8): RGB24 image of skeleton.
+
+%% Block Parameters
+%
+% * Max number of Skeleton Tracking: Maximum number of people in skeleton tracking. If 2 is configured, addtional
+% Skeleton output will be added.
+%
+% * Real world coordinates (Default: Projective): Choose Real world (X, Y, Z in meter) or Projective (X, Y in pixel and Z in meter) coordinates for skeleton joints.
+%
+% Projective coodinates:
+%
+% <<ProjectiveXYZ.png>>
+%
+% Real world coodinates:
+%
+% <<RealWorldXYZ.png>>
+%
+% * Image output: Return RGB24 image of skeleton.
+
+%% Calibration for Skeleton tracking (for only OpenNI)
+% Note that calibration for skeleton tracking is required for only Need PSI pose for calibration of Skeleton tracking in IMAQ block is checked or pose less
+% calibration unsupported OpenNI was used.
+%
+% The skeleton tracking calibration requires the following steps:
+%
+% * Start simulation.
+%
+% * If a person moved in front of the device, person shape should be appeared in the display.
+% 
+% * The person needs to take a calibration pose called “PSI” to start calibration.
+%
+% <<PsiPose.jpg>>
+%
+% * Once the calibration pose is recognized, the color of the motion detected shape should be turned to white and keep the calibration pose until skeleton tracking begins.
+%
+% * While skeleton tracking is performed, small crosses '+' are drawn at the skeleton joints position on the motion detected shape in the display of Image output.
+
+##### SOURCE END #####
+--></body></html>

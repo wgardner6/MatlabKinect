@@ -1,0 +1,90 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>NID Image</title><meta name="generator" content="MATLAB 7.11.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-11-30"><meta name="DC.source" content="slnid_image.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><h1>NID Image</h1><!--introduction--><p>Kinect&#12487;&#12496;&#12452;&#12473;&#12363;&#12425;&#21462;&#24471;&#12375;&#12383;RGB24&#12452;&#12513;&#12540;&#12472;&#12434;&#36820;&#12375;&#12414;&#12377;&#12290;</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">&#20837;&#21147;&#20449;&#21495;</a></li><li><a href="#2">&#20986;&#21147;&#20449;&#21495;</a></li><li><a href="#3">&#12502;&#12525;&#12483;&#12463;&#12497;&#12521;&#12513;&#12540;&#12479;</a></li></ul></div><h2>&#20837;&#21147;&#20449;&#21495;<a name="1"></a></h2><div><ul><li>SYNC (uint32): IMAQ&#12502;&#12525;&#12483;&#12463;&#12363;&#12425;&#20986;&#21147;&#12373;&#12428;&#12427;&#21516;&#26399;&#29992;&#26178;&#38291;&#20449;&#21495;&#20837;&#21147; [msec]&#12290;</li></ul></div><h2>&#20986;&#21147;&#20449;&#21495;<a name="2"></a></h2><div><ul><li>RGB (uint8): RGB24&#12452;&#12513;&#12540;&#12472;&#12487;&#12540;&#12479;&#12290;</li></ul></div><div><ul><li>R/G/B (uint8): R, G, B&#12364;&#29420;&#31435;&#12375;&#12383;RGB24&#12452;&#12513;&#12540;&#12472;&#12290;</li></ul></div><h2>&#12502;&#12525;&#12483;&#12463;&#12497;&#12521;&#12513;&#12540;&#12479;<a name="3"></a></h2><div><ul><li>Output: RGB24&#12452;&#12513;&#12540;&#12472;&#12398;&#20986;&#21147;&#12514;&#12540;&#12489;&#35373;&#23450;&#12290;</li></ul></div><p class="footer">Copyright 2011-2012 The MathWorks, Inc.<br>
+      Published with MATLAB&reg; 7.11.1<br></p></div><!--
+##### SOURCE BEGIN #####
+%% NID Image
+%
+% Kinectデバイスから取得したRGB24イメージを返します。
+%
+% Copyright 2011-2012 The MathWorks, Inc.
+
+%% 入力信号
+%
+% * SYNC (uint32): IMAQブロックから出力される同期用時間信号入力 [msec]。
+
+%% 出力信号
+%
+% * RGB (uint8): RGB24イメージデータ。
+%
+% * R/G/B (uint8): R, G, Bが独立したRGB24イメージ。
+%
+
+%% ブロックパラメータ
+%
+% * Output: RGB24イメージの出力モード設定。
+
+##### SOURCE END #####
+--></body></html>
